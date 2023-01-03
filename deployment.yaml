@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: demo
-        image: argoproj/rollouts-demo:blue
+        image: argoproj/rollouts-demo:orange
         imagePullPolicy: Always
         ports:
         - name: web
@@ -92,7 +92,7 @@ spec:
   - name: success-rate
     successCondition: result[0] >= 0.95
     interval: 30s
-    failureLimit: 1
+    failureLimit: 10
     provider:
       prometheus:
         address: http://prometheus.istio-system.svc.cluster.local:9090
